@@ -1,0 +1,79 @@
+﻿@model TestWebApplication1.Models.MyProductsModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h4>Create new model</h4>
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div class="form-group">
+                <div>
+                    <label asp-for="productCode" class="control-label"></label>
+                </div>
+                   <input asp-for="productCode" class="form-control" />
+                   <span asp-validation-for="productCode" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <div>
+                    <label asp-for="productName" class="control-label"></label>
+                </div>
+                <input asp-for="productName" class="form-control" />
+                <span asp-validation-for="productName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <div>
+                <label asp-for="productLine" class="control-label"></label>
+                </div>
+                <input asp-for="productLine" class="form-control" />
+                <span asp-validation-for="productLine" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <div>
+                <label asp-for="productScale" class="control-label"></label>
+                </div>
+                <input asp-for="productScale" class="form-control" />
+                <span asp-validation-for="productScale" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <div>
+                <label asp-for="productVendor" class="control-label"></label>
+                </div>
+                <input asp-for="productVendor" class="form-control" />
+                <span asp-validation-for="productVendor" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <div>
+                <label asp-for="productDescription" class="control-label"></label>
+                </div>
+                <input asp-for="productDescription" class="form-control" />
+                <span asp-validation-for="productDescription" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <div>
+                <label asp-for="QuantityInStock" class="control-label"></label>
+                </div>
+                <input asp-for="QuantityInStock" class="form-control" />
+                <span asp-validation-for="QuantityInStock" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <div>
+                <label asp-for="buyPrice" class="control-label"></label>
+                </div>
+                <input asp-for="buyPrice" class="form-control" />
+                <span asp-validation-for="buyPrice" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <div>
+                    <label asp-for="MSRP" class="control-label"></label>
+                </div>
+                <input asp-for="MSRP" class="form-control" />
+                <span asp-validation-for="MSRP" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" href="@Url.Action("AddNewModel", "Products", Model)" value="Create new model" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>

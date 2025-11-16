@@ -1,0 +1,113 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - TestWebApplication</title>
+    <script type="importmap"></script>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/TestWebApplication.styles.css" asp-append-version="true" />
+</head>
+<body>
+    <div class="offcanvas offcanvas-end text-bg-dark" id="myOffCanvas">
+        <div class="offcanvas-header">
+            <h1 class="offcanvas-title">Page navigator</h1>
+            <button type="button" class="btn-close btn-close-white text-reset" data-bs-dismiss="offcanvas"></button>
+        </div>
+        <div class="offcanvas-body">
+            <div>
+               <a class="dropdown-item" href="@Url.Action("Index", "Home")">Home Page</a>
+            </div>
+            <div>
+               <a class="dropdown-item" href="@Url.Action("AllProducts", "Products")">Products Page</a>
+            </div>
+            <div>
+                <a class="dropdown-item" href="@Url.Action("ViewCart", "Home")">Basket Page</a>
+            </div>
+        </div>
+    </div>
+
+    <header>
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark ">
+            <div class="container-fluid">
+                <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                    <img class="picture justify-content-md-start" src="https://www.scalemodelshop.co.uk/wp-content/uploads/2022/05/logo_600.jpg" width="300" height="75">
+                    <div class="btn btn-lg">
+                        <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                    </div>
+                    <div class="btn btn-lg justify-content-end">
+                        <a class="nav-link text-light" data-bs-toggle="tooltip" title="Basket" asp-area="" asp-controller="Home" asp-action="ViewCart">Basket</a>
+                    </div>
+                    <div class="btn btn-lg">
+                        <a class="nav-link text-light" asp-area="" asp-controller="Products" asp-action="AllProducts">Products List</a>
+                    </div>
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Models</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" asp-controller="Products" asp-action="ClassicCars">Classic Cars</a></li>
+                                <li><a class="dropdown-item" asp-controller="Products" asp-action="Motorcycles">Motorcycles</a></li>
+                                <li><a class="dropdown-item" asp-controller="Products" asp-action="Planes">Planes</a></li>
+                                <li><a class="dropdown-item" asp-controller="Products" asp-action="Ships">Ships</a></li>
+                                <li><a class="dropdown-item" asp-controller="Products" asp-action="Trains">Trains</a></li>
+                                <li><a class="dropdown-item" asp-controller="Products" asp-action="TrucksandBuses">Trucks and Buses</a></li>
+                                <li><a class="dropdown-item" asp-controller="Products" asp-action="VintageCars">Vintage Cars</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Vendors</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" asp-controller="Products" asp-action="Autoart_Studio_Design">Autoart Studio Design</a></li>
+                                <li><a class="dropdown-item" asp-controller="Products" asp-action="Carousel_DieCast_Legends">Carousel DieCast Legends</a></li>
+                                <li><a class="dropdown-item" asp-controller="Products" asp-action="Classic_Metal_Creations">Classic Metal Creations</a></li>
+                                <li><a class="dropdown-item" asp-controller="Products" asp-action="Exoto_Designs">Exoto Designs</a></li>
+                                <li><a class="dropdown-item" asp-controller="Products" asp-action="Gearbox_Collectibles">Gearbox Collectibles</a></li>
+                                <li><a class="dropdown-item" asp-controller="Products" asp-action="Highway_66_Mini_Classics">Highway 66 Mini Classics</a></li>
+                                <li><a class="dropdown-item" asp-controller="Products" asp-action="Min_Lin_Diecast">Min Lin Diecast</a></li>
+                                <li><a class="dropdown-item" asp-controller="Products" asp-action="Motor_City_Art_Classics">Motor City Art Classics</a></li>
+                                <li><a class="dropdown-item" asp-controller="Products" asp-action="Red_Start_Diecast">Red Start Diecast</a></li>
+                                <li><a class="dropdown-item" asp-controller="Products" asp-action="Second_Gear_Diecast">Second Gear Diecast</a></li>
+                                <li><a class="dropdown-item" asp-controller="Products" asp-action="Studio_M_Art_Models">Studio M Art Models</a></li>
+                                <li><a class="dropdown-item" asp-controller="Products" asp-action="Unimax_Art_Galleries">Unimax Art Galleries</a></li>
+                                <li><a class="dropdown-item" asp-controller="Products" asp-action="Welly_Diecast_Productions">Welly Diecast Productions</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Our contacts</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Phone:88005553535</a></li>
+                                <li><a class="dropdown-item" href="#">classicmodels@email.com</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                        <div class="d-flex">
+                        <div>
+                            <a class="btn" href="@Url.Action("AddNewModel", "Products")">Add new model</a>
+                        </div>
+                           <div class="nav-item offcanvas">
+                              <a class="btn btn-primary" href="#myOffCanvas" data-bs-toggle="offcanvas">Main Menu</a>
+                           </div>
+                        </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2025 - TestWebApplication
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

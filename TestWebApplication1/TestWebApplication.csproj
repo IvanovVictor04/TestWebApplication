@@ -1,0 +1,38 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>aspnet-TestWebApplication1-002b305b-8b06-439f-8552-bd14dc828a44</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Remove="wwwroot\lib\datatables.css" />
+    <Content Remove="wwwroot\lib\datatables.js" />
+    <Content Remove="wwwroot\lib\datatables.min.css" />
+    <Content Remove="wwwroot\lib\datatables.min.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\lib\datatables.css" />
+    <None Include="wwwroot\lib\datatables.js" />
+    <None Include="wwwroot\lib\datatables.min.css" />
+    <None Include="wwwroot\lib\datatables.min.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="9.0.10" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="9.0.10" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="9.0.10" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.10" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="9.0.10" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="9.0.10" />
+    <PackageReference Include="MySql.Data" Version="9.5.0" />
+    <PackageReference Include="MySql.EntityFrameworkCore" Version="9.0.9" />
+    <PackageReference Include="MySqlConnector" Version="2.4.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.4" />
+    <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="9.0.0" />
+  </ItemGroup>
+
+</Project>

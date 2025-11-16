@@ -1,0 +1,67 @@
+﻿@{
+    ViewData["Title"] = "Products Page";
+}
+@model IEnumerable<MyProductsModel>
+<div class="container row p-0 m-0">
+    <div class="col-6">
+        <h2 class="text-info" Book List></h2>
+    </div>
+    <div class="col-12 border p-3">
+        <table id="myVintageCarsTable" class="table table-stripped table-bordered" style="width:100%">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Scale</th>
+                    <th>Vendor</th>
+                    <th>Price</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+
+            @foreach (var product in Model)
+            {
+                @if (product.productLine == "Vintage Cars")
+                {
+                        <tr>
+                            <td>@product.productName</td>
+                            <td>@product.productScale</td>
+                            <td>@product.productVendor</td>
+                            <td>@product.buyPrice</td>
+                            <td>
+                                <a href="@Url.Action("Details", "Products", new { id = product.productCode })" class="btn btn-info">
+                                    Details
+                                </a>
+                            </td>
+                            <td>
+                                <a href="@Url.Action("AddToBasket", "Home", new { Id = product.productCode })" class="btn btn-info">
+                                    Add to Basket
+                                </a>
+                            </td>
+                        </tr>
+                    }
+            }
+            </tbody>
+        </table>
+    </div>
+</div>
+@section Scripts {
+    <script src="~/lib/datatables.js"></script>
+
+    <script src="~/lib/datatables.css"></script>
+    <script>
+        let table = new DataTable('#myVintageCarsTable', {
+            "select": true,
+            "pageLength": 10,
+            "ordering": true,
+            "searching": true,
+            "paging": true,
+            "info": true,
+            "orderrable":true,
+              ordering: {
+            indicators: true
+        }
+        });
+    </script>
+}

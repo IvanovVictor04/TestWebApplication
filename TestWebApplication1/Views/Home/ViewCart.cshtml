@@ -1,0 +1,63 @@
+﻿@model BasketItemViewModel
+<h1>Shopping Cart</h1>
+<table class="table" id="myViewTable">
+      <thead>
+          <tr>
+             <th>Name</th>
+             <th>Scale</th>
+             <th>Vendor</th>
+             <th>Price</th>
+             <th>Quantity</th>
+             <th>SubTotal</th>
+             <th></th>
+          </tr>
+      </thead>
+    <tbody>
+        @foreach (var item in Model.BasketItems)
+         {
+             <tr>
+                <td>@item.Model.productName</td>
+                <td>@item.Model.productScale</td>
+                <td>@item.Model.productVendor</td>
+                <td>@item.Model.buyPrice</td>
+                <td>@item.Quantity</td>
+                <td>@(item.Model.buyPrice * item.Quantity)</td>
+                <td>
+                    <a href="@Url.Action("DeleteFromBasket", "Home", new { Id = item.Model.productCode })" class="btn btn-danger">
+                        Delete
+                    </a>
+                </td>
+             </tr>
+          }
+        <tr>
+            <td></td>
+            <td></td> 
+            <td></td>
+            <td></td>
+            <td>Total:</td>
+            <td>@Model.TotalPrice.ToString("C")</td>
+            <td></td>
+        </tr>
+    </tbody>
+</table>
+@section Scripts {
+
+    <script src="~/lib/datatables.js"></script>
+
+    <script src="~/lib/datatables.css"></script>
+
+    <script>
+        let table = new DataTable('#myViewTable', {
+            "select": true,
+            "pageLength": 10,
+            "ordering": true,
+            "searching": true,
+            "paging": true,
+            "info": true,
+            "orderrable":true,
+            ordering: {
+            indicators: true
+        }
+        });
+    </script>
+}
