@@ -146,10 +146,16 @@ namespace TestWebApplication1.Controllers
         [HttpPost]
         public IActionResult AddNewModel(MyProductsModel model)
         {
+            if (ModelState.IsValid)
+            {
             _db.Products.Add(model);
             _db.SaveChanges();
             return RedirectToAction("AllProducts");
+            }
+            else
+            {
+                return View();
+            }
         }
-
     }
 }
