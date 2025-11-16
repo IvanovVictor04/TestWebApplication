@@ -36,8 +36,6 @@ else
     // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
-MySqlConnection conn = new MySqlConnection("server=localhost;port=3306;database=classicmodels;user=root;password=Ha432_BQ;Persist Security Info=False;");
-conn.Open();
 app.UseHttpsRedirection();
 app.UseRouting();
 app.UseStaticFiles();
